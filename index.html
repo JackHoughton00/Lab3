@@ -1,12 +1,57 @@
-<!DOCTYPE html>
 <head>
     <title>Lab 3</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
-<body>
-    <h1>This is placeholder text!</h1>
+<body onload="openPage('CustomerInfo', defaultOpen , '#f8e5b3');getOrganic();getLactose();getNuts()">
+    
+    <div id="name" class="name">
+        <h2>Welcome to uO Grocery!</h2>
+    
+    <!-- The layout for this page was inspired directly from https://www.w3schools.com/howto/howto_js_full_page_tabs.asp -->
+    <!-- While some changes have been made, the starting structure of the code has been directly taken from the above link. -->
+    </div>    
+    <button class="tablink" id="defaultOpen">Customer Info</button>
+    <button class="tablink" id="prodTab">Products</button>
+    <button class="tablink" id="cartTab"> Cart</button>
+
+    <div id="CustomerInfo" class="tabcontent">
+        <h4>Tell us a bit about yourself!</h4>
+        <h4>Select all of the dietary restrictions that apply:</h4>
+        <div id="dietaryRestrictions" name="dietaryRestrictions" class="dietaryRestrictions"> 
+            <input type="checkbox" id="Lactose" name="Lactose"  onchange="getLactose()">
+            <label for="Lactose">Lactose Intolerance</label>
+            <input type="checkbox" id="Nuts" name="Nuts" onchange="getNuts()">
+            <label for="Nuts">Nut Allergy</label>
+            <input type="checkbox" id="Organic" name="Organic" onchange="getOrganic()" >
+            <label for="Organic">Organic Preference</label><br>
+        </div>
+        <br>
+        <button class="button" onclick="populateListProductChoices('displayProduct');getLactose();getNuts();getOrganic();openPage('Products', prodTab , '#f8e5b3')">Next</button>
+    </div>
+
+    <div id="Products" class="tabcontent">
+        <h4>We have preselected products based on your restrictions</h4><br>
+        <h4>Choose items to buy: </h4>
+        <div id="displayProduct"></div>
+
+        <br>
+        <button class="button" type="button" onclick="openPage('CustomerInfo', defaultOpen , '#f8e5b3')">Back</button>
+        <button class="button" type="button" onclick="openPage('Cart', cartTab , '#f8e5b3');selectedItems()">Next</button>
+    </div>
+
+    <div id="Cart" class="tabcontent">
+        <h3>Below are the contents in your shopping cart</h3>
+        <div id="displayCart"></div>
+        <button class="button" type="button" onclick="openPage('Products', prodTab , '#f8e5b3')">Back</button>
+    </div>
+
+
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/groceries.js"></script>
+    <footer>Designed by: Me</footer>
 
 
 
 
-</body>
+</body> 

@@ -1,0 +1,56 @@
+
+/* Lines 1 - 36 were directly sourced from https://www.w3schools.com/howto/howto_js_full_page_tabs.asp with some minor styling changes made. */ 
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+    background-color: #fbefd0;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #fbefd0;
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33.3%;
+  }
+
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+
+  #CustomerInfo {background-color: #f8e5b3;}
+  #Products {background-color: #f8e5b3;}
+  #Cart {background-color: #f8e5b3;} 
+
+  .name {
+    color:Black;
+    text-align: center;
+    font-size: 20px;
+    font-family: Optima; 
+  }
+  
+
+  .button {
+    border-radius: 12px;
+    padding: 25px 100px;
+    background-color: white;
+    border: 2px solid black;
+    transition-duration: 0.5s;
+  }
+  .button:hover {
+    background-color: black;
+    color:white;
+  }
